@@ -1,0 +1,23 @@
+.field > .form-control {
+    width: 25rem;
+}
+
+.sign-up-form {
+    margin-left: 40rem;
+    margin-top: 10rem;
+}
+
+.navbar {
+  background-color: rgb(32, 32, 168);
+}
+
+.posts {
+    margin-left: 40rem;
+}
+
+.sign-up-body {
+  background-image: url("Facebook.jpg") !important;
+  height: 93.5vh;
+  position: fixed;
+  width: 100%;
+}

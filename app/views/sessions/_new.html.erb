@@ -1,0 +1,7 @@
+<%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
+  <%= f.label :email , class: "text-light" %>
+  <%= f.email_field :email %>
+  <%= f.label :password , class: "text-light" %>
+  <%= f.password_field :password %>
+  <%= f.submit "Log in" , class: "btn btn-primary" %>
+  <% end %>

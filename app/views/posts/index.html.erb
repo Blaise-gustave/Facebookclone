@@ -1,0 +1,25 @@
+<div class="posts">
+  <%= link_to 'New Post', new_post_path, class:"btn btn-primary" %>
+  <h1>Posts</h1>
+  <% @posts.each do |post| %>
+    <div class="card  mt-3" style="width: 38rem;">
+    <div>
+      <img src="https://img.icons8.com/windows/32/000000/user.png">
+      <span><%= post.user.first_name %></span>
+    </div>
+    <%if post.image.present?%>
+    <%= image_tag post.image.url ,class:"card-img-top"%> 
+    <%else%>
+    <%end%> 
+    <div class="card-body">             
+      <p class="card-text"><%= post.content %> </p>
+      <%= link_to 'Show', post,class:"btn btn-primary" %>
+      <%= link_to 'Edit', edit_post_path(post),class:"btn btn-primary" %>
+      <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?',class:"btn btn-primary" } ,class:"btn btn-primary"%>
+    </div>
+    </div>
+  <%end%>
+</div>
+
+
+

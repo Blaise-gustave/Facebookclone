@@ -13,9 +13,13 @@
     <%end%> 
     <div class="card-body">             
       <p class="card-text"><%= post.content %> </p>
-      <%= link_to 'Show', post,class:"btn btn-primary" %>
-      <%= link_to 'Edit', edit_post_path(post),class:"btn btn-primary" %>
-      <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?',class:"btn btn-primary" } ,class:"btn btn-primary"%>
+      <%if post.user.first_name == current_user.first_name%>
+        <%= link_to 'Show', post,class:"btn btn-primary" %>
+        <%= link_to 'Edit', edit_post_path(post),class:"btn btn-primary" %>
+        <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?',class:"btn btn-primary" } ,class:"btn btn-primary"%>
+      <%else%>
+        <%= link_to 'Show', post,class:"btn btn-primary" %>
+      <%end%>
     </div>
     </div>
   <%end%>
